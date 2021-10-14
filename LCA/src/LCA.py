@@ -28,7 +28,9 @@ class Node:
 def lowestCommonAncestor(node1, node2, root):
     # adapting code from LCA.java...
 
-    if node1 == root and node1 == root:
+    if root == None:
+        return None
+    if node1 == root or node2 == root:
         return root
 
     leftLCA = lowestCommonAncestor(node1, node2, root.getLeft())
@@ -78,6 +80,8 @@ class testLCA(unittest.TestCase):
 
         self.assertEqual(a, lowestCommonAncestor(a, a, a))
         self.assertEqual(a, lowestCommonAncestor(b, c, a))
+        self.assertEqual(a, lowestCommonAncestor(d, f, a))
+        self.assertEqual(b, lowestCommonAncestor(d, g, a))
 
 if __name__ == '__main__':
     unittest.main() # Runs the tests
