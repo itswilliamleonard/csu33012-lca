@@ -3,6 +3,7 @@ public class LCA {
 
     public static Node lowestCommonAncestor(Node node1, Node node2, Node root)
     {
+        if (root == null) return null;
         // If one of the nodes has been found (i.e. is root), return root
         if (node1 == root || node2 == root) return root;
 
